@@ -9,6 +9,14 @@ import { connect } from 'react-redux';
 import * as DashboardActions from "../../actions/dashboard";
 import { bindActionCreators } from "redux";
 
+const styles = {
+    listItem: {
+        backgroundColor: '#38435652',
+        borderRadius: '5px',
+        paddingRight: '16px'
+    }
+}
+
 class DashboardSelect extends React.Component {
     state = {
         dashboard: this.props.dashboards[0].name,
@@ -35,9 +43,10 @@ class DashboardSelect extends React.Component {
 
     render() {
         const { anchorEl } = this.state;
+        
         return (
             <div>
-                <ListItem style={{ backgroundColor: '#38435652' }}
+                <ListItem style={styles.listItem}
                     button
                     aria-haspopup="true"
                     aria-controls="lock-menu"
@@ -47,7 +56,7 @@ class DashboardSelect extends React.Component {
                         primary={this.props.dashboards[this.state.selectedIndex].name}
                     />
                     <ListItemIcon>
-                        <MoreVertIcon style={{ color: 'white' }} />
+                        <MoreVertIcon style={{ color: 'white', margin: '0px' }} />
                     </ListItemIcon>
                 </ListItem>
 

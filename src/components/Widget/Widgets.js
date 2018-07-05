@@ -1,7 +1,6 @@
 import React from 'react';
 import CardWidget from '../Widget/CardWidget';
 import { Query } from 'react-apollo';
-import { graphql, compose } from "react-apollo";
 import { GET_WIDGETS } from '../Widget/Queries'
 
 const WidgetList = ({ id }) => (
@@ -18,7 +17,6 @@ const WidgetList = ({ id }) => (
 )
 
 class Widgets extends React.Component {
-    
     render() {
         return (
               <WidgetList id={this.props.id} />
