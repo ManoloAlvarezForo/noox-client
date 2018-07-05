@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './animate.css';
 import App from './containers/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom'
-import { AUTH_TOKEN } from './constants'
+import { AUTH_TOKEN, GRAPHQL_URL } from './constants'
 import { ApolloLink, concat } from 'apollo-link'
 import { ApolloProvider } from 'react-apollo'
-// import { ApolloClient, InMemoryCache } from 'apollo-boost'
-import { HttpLink, createHttpLink } from 'apollo-link-http'
+import { createHttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { ApolloClient } from 'apollo-client'
-import { setContext} from 'apollo-link-context';
+import { Provider } from 'react-redux';
+import { configureStore } from './store/ConfigureStore'
 
-const httpLink = createHttpLink({ uri: `http://localhost:4000/graphql` })
+// Redux Store configuration.
+const store = configureStore();
+
+const httpLink = createHttpLink({ uri: GRAPHQL_URL })
 
 const authMiddleware = new ApolloLink((operation, forward) => {
   const token = localStorage.getItem(AUTH_TOKEN);
@@ -34,11 +38,13 @@ const client = new ApolloClient({
 })
 
 ReactDOM.render(
+  <Provider store={store}>
   <BrowserRouter>
     <ApolloProvider client={client}>
       <App />
     </ApolloProvider>
-  </BrowserRouter>,
+  </BrowserRouter>
+  </Provider>,
   document.getElementById('root'),
 )
 registerServiceWorker()
