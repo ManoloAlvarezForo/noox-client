@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 const styles = {
     card: {
         margin: '5px',
+        borderRadius: '5px',
     },
     title: {
         marginBottom: 16,

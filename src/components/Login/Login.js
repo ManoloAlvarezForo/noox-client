@@ -25,12 +25,13 @@ const styles = theme => ({
   cssFocused: {},
   cssUnderline: {
     '&:after': {
-      borderBottomColor: 'rgb(252, 253, 253)',
+      borderBottomColor: 'rgb(252, 103, 103)',
     },
   },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
+    color: 'orange'
   },
   menu: {
     width: 200,
@@ -64,9 +65,9 @@ class Login extends Component {
     return (
       <div className="login-main-background" style={{ height: '100vh', display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
         <div style={{ flexDirection: 'column', background: 'none', width: '50%', justifyContent: 'start', display: 'flex' }}>
-          <Paper style={{ borderRadius: '50%', background: 'none', alignSelf: 'flex-end', marginTop: '30px' }} elevation={24}>
+          <Paper style={{ borderRadius: '10px 50px', background: 'none', alignSelf: 'flex-end', marginTop: '30px' }} elevation={24}>
             <div style={{
-              flexDirection: 'column', textAlign: 'center', width: '150px', height: '150px', borderStyle: 'dashed', borderRadius: '50%', alignSelf: 'center',
+              flexDirection: 'column', textAlign: 'center', width: '150px', height: '150px', borderStyle: 'dashed', borderRadius: '10px 50px', alignSelf: 'center',
               justifyContent: 'center',
               display: 'flex',
               fontSize: '1rem',
@@ -77,9 +78,9 @@ class Login extends Component {
               <Icon style={{ fontSize: '80px', alignSelf: 'center', color: '#fc6767' }}>business</Icon>
             </div>
           </Paper>
-          <Paper style={{ borderRadius: '50%', background: 'none', alignSelf: 'center' }} elevation={24}>
+          <Paper style={{ borderRadius: '40px 10px', background: 'none', alignSelf: 'center' }} elevation={24}>
             <div style={{
-              flexDirection: 'column', textAlign: 'center', width: '120px', height: '120px', borderStyle: 'dashed', borderRadius: '50%', alignSelf: 'center',
+              flexDirection: 'column', textAlign: 'center', width: '120px', height: '120px', borderStyle: 'dashed', borderRadius: '40px 10px', alignSelf: 'center',
               justifyContent: 'center',
               display: 'flex',
               fontSize: '4rem',
@@ -90,9 +91,9 @@ class Login extends Component {
               <Icon style={{ fontSize: '60px', alignSelf: 'center', color: '#fc6767' }}>widgets</Icon>
             </div>
           </Paper>
-          <Paper style={{ borderRadius: '50%', background: 'none', alignSelf: 'flex-end' }} elevation={24}>
+          <Paper style={{ borderRadius: '110px 10px 110px 10px', background: 'none', alignSelf: 'flex-end' }} elevation={24}>
             <div style={{
-              flexDirection: 'row', textAlign: 'center', width: '300px', height: '300px', borderStyle: 'dashed', borderRadius: '50%', alignSelf: 'center',
+              flexDirection: 'row', textAlign: 'center', width: '300px', height: '300px', borderStyle: 'dashed', borderRadius: '110px 10px 110px 10px', alignSelf: 'center',
               justifyContent: 'center',
               display: 'flex',
               fontSize: '8rem',
@@ -108,12 +109,12 @@ class Login extends Component {
           </Paper>
         </div>
         <div style={{ flex: '1', justifyContent: 'center', display: 'flex', flexDirection: 'row' }}>
-          <Paper className="login-background " style={{ alignSelf: 'center', height: '350px', width: '200px', color: 'white', minWidth: '300px', padding: '80px', borderRadius: '10px' }} elevation={24}>
+          <Paper className="login-background " style={{ border: '2px dashed', alignSelf: 'center', height: '350px', width: '200px', color: 'white', minWidth: '300px', padding: '80px', borderRadius: '10px 110px 10px 110px', border: '2px dashed', borderColor: '#0c75b9' }} elevation={24}>
             <div>
               <form className={classes.container + " zoomIn"} noValidate autoComplete="off">
-                <div style={{ padding: '10px', alignSelf: 'center', fontSize: '1rem', fontWeight: 'bold' }} className={this.state.loginAnimation}>{this.state.login ? "Please continue with the authentication..." : "Create your account"}</div>
+                <div style={{color: 'rgb(187, 195, 214)', padding: '10px', alignSelf: 'center', fontSize: '1rem', fontWeight: 'bold' }} className={this.state.loginAnimation}>{this.state.login ? "Please continue with the authentication..." : "Create your account"}</div>
                 {!this.state.login && (
-                  <TextField style={{ width: '100%' }}
+                  <TextField
                     id="name"
                     label="Name"
                     className={classes.textField}
@@ -122,13 +123,16 @@ class Login extends Component {
                     margin="normal"
                     placeholder="your username"
                     InputLabelProps={{
-                      style: { fontWeight: 'bold' }
-                    }}
+                    style: {color: 'rgb(252, 103, 103)', fontWeight: 'bold' }
+                  }}
                     InputProps={{
+                      classes: {
+                      underline: classes.cssUnderline
+                    },
                       style: { color: 'white' },
                       startAdornment: (
                         <InputAdornment position="start">
-                          <Person />
+                          <Person style={{color: 'rgb(187, 195, 214)'}}/>
                         </InputAdornment>
                       ),
                     }}
@@ -142,16 +146,16 @@ class Login extends Component {
                   margin="normal"
                   placeholder="e. g. manolo@manolo.com"
                   InputLabelProps={{
-                    style: { fontWeight: 'bold' }
+                    style: { fontWeight: 'bold', color: 'rgb(252, 103, 103)' }
                   }}
                   InputProps={{
                     classes: {
-                      underline: styles.cssUnderline
+                      underline: classes.cssUnderline
                     },
                     style: { color: 'white' },
                     startAdornment: (
                       <InputAdornment position="start">
-                        <Email />
+                        <Email style={{color: 'rgb(187, 195, 214)'}}/>
                       </InputAdornment>
                     ),
                   }}
@@ -166,13 +170,16 @@ class Login extends Component {
                   margin="normal"
                   placeholder="password"
                   InputLabelProps={{
-                    style: { fontWeight: 'bold' }
+                    style: {color: 'rgb(252, 103, 103)', fontWeight: 'bold'}
                   }}
                   InputProps={{
+                    classes: {
+                      underline: classes.cssUnderline
+                    },
                     style: { color: 'white' },
                     startAdornment: (
                       <InputAdornment position="start">
-                        <Lock />
+                        <Lock style={{color: 'rgb(187, 195, 214)'}} />
                       </InputAdornment>
                     ),
                   }}
@@ -180,7 +187,7 @@ class Login extends Component {
               </form>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <br style={{ flex: 1 }} />
-                <Button style={{ color: 'white', borderColor: 'white' }} variant="outlined" size="medium" onClick={() => this._confirm()}>
+                <Button style={{ color: 'rgb(227, 230, 236)', backgroundColor: 'rgb(253, 102, 103)' }} variant="outlined" size="medium" onClick={() => this._confirm()}>
                   {this.state.login ? "login" : "create"}
                 </Button>
                 <br style={{ flex: 1 }} />

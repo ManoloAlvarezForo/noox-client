@@ -14,40 +14,12 @@ import Icon from '@material-ui/core/Icon';
 const drawerWidth = 240;
 const options = [
     { name: 'Dashboards', icon: 'dashboard', path: '/dashboards' },
-    { name: 'Devices', icon: 'computer', path: '/devices' }
+    { name: 'Devices', icon: 'computer', path: '/devices' },
+    { name: 'Log out', icon: 'person', path: '/devices' }
 ]
 const styles = theme => ({
     primary: {
         color: 'rgb(56, 67, 88)'
-    },
-    root: {
-        flexGrow: 1,
-        zIndex: 1,
-        overflow: 'hidden',
-        position: 'relative',
-        display: 'flex',
-    },
-    appBar: {
-        zIndex: theme.zIndex.drawer + 1,
-        transition: theme.transitions.create(['width', 'margin'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-    },
-    appBarShift: {
-        marginLeft: drawerWidth,
-        width: `calc(100% - ${drawerWidth}px)`,
-        transition: theme.transitions.create(['width', 'margin'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-    },
-    menuButton: {
-        marginLeft: 12,
-        marginRight: 36,
-    },
-    hide: {
-        display: 'none',
     },
     drawerPaper: {
         position: 'relative',
@@ -106,19 +78,16 @@ class SideNav extends React.Component {
             open: !this.state.open
         })
         !this.state.open ? this.setState({ close: 'sidenav-title' }) : this.setState({ close: 'sidenav-title close' })
-
-
     }
 
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
     };
     render() {
-        const { classes, theme } = this.props;
+        const { classes } = this.props;
         return (
             <div style={{ display: 'flex', flexDirection: 'row' }}>
                 <Drawer
-
                     variant="permanent"
                     classes={{
                         paper: classNames(classes.drawerPaper, !this.state.open && classes.drawerPaperClose, classes.background),
@@ -138,7 +107,7 @@ class SideNav extends React.Component {
                             <div style={{ fontFamily: 'monospace', fontSize: '3rem', color: 'rgb(252, 103, 103)', fontWeight: 'bold', display: 'flex', alignSelf: 'center'}}>X</div>
                         </div>
                         </div>
-                        <IconButton style={{ marginRight: '5px', color: 'rgb(252, 103, 103)' }} onClick={this.handleDrawerToggle}>
+                        <IconButton className="sidenav-icon" style={{ marginRight: '0px', color: 'rgb(252, 103, 103)' }} onClick={this.handleDrawerToggle}>
                             {this.state.open === false ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                         </IconButton>
                     </div>

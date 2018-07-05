@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom'
 import { AUTH_TOKEN } from '../constants'
-import MiniDrawer from '../components/MiniDrawer/MiniDrawer'
 import SideNav from '../components/MiniDrawer/SideNav'
 
 function isAuthenticated() {

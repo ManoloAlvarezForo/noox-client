@@ -14,10 +14,7 @@ body {
   font-weight: 400;
   src: url(~/material-design-icons/iconfont/MaterialIcons-Regular.eot);
   /* For IE6-8 */
-  src: local('Material Icons'), local('MaterialIcons-Regular'),
-  url(~material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
-  url(~material-design-icons/iconfont/MaterialIcons-Regular.woff) format('woff'),
-  url(~material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(~material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'), url(~material-design-icons/iconfont/MaterialIcons-Regular.woff) format('woff'), url(~material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 .material-icons {
@@ -64,10 +61,8 @@ body {
   /* background: linear-gradient(to left, #292e49, #027ac1); */
   /* background: linear-gradient(to left, #64478a, #0467a2); */
   /* background: linear-gradient(to left, #5716ad, #0777b9); */
-  
   /* background-color: #384357; */
   background: linear-gradient(to left, #5716ad, #0777b9);
-
   /* background: #5C258D;
   background: -webkit-linear-gradient(to right, #4389A2, #5C258D); 
   background: linear-gradient(to right, #4389A2, #5C258D); */
@@ -82,8 +77,6 @@ body {
   /* background: none; */
   background-color: #384357;
   /* background-color: #0777b9; */
-
-
 }
 
 .hide {
@@ -111,3 +104,33 @@ body {
   overflow: hidden;
   transition: max-width .2s ease-out;
 }
+
+.basic-content {
+  padding: 3px;
+  height: calc(100vh - 70px);
+  align-content: baseline;
+  justify-content: flex-start;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.basic-column-content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 600px) {
+  .sidenav-default {
+    min-height: 64px;
+    height: 64px;
+  }
+}
+
+@media (min-width: 600px) {
+  .sidenav-icon {
+    margin-right: 5px !important;
+  }
+}
+
