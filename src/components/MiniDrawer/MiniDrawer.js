@@ -127,7 +127,7 @@ class MiniDrawer extends React.Component {
           }}
           open={this.state.open}
         >
-          <div className={classes.toolbar + " login-main-background"}>
+          <div className={classes.toolbar + " mini-drawer-background"}>
             <div style={{
               width: '100%',
               justifyContent: 'center',

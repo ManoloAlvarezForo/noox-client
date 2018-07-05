@@ -1,41 +1,39 @@
 import React from 'react';
-import CardWidget from '../Widget/CardWidget';
+import Toolbar from '../Toolbar/Toolbar';
+import Widgets from '../Widget/Widgets';
+import DashboardSelect from '../Dashboards/DashboardSelect'
+import {GET_DASHBOARDS} from '../Dashboards/Queries'
+import { Query } from 'react-apollo';
+
+import { connect } from 'react-redux'
+
+class DashboardsList extends React.Component{
+    render() {
+        return(
+                <Query query={GET_DASHBOARDS}  >
+                    {({ loading, error, data }) => {
+                        if (loading) return <div>Loading...</div>
+                        if(error) return `Error!: ${error}` 
+
+                        return <Toolbar title="Dashboards" backgroundColor="mini-drawer-background" body={<DashboardSelect dashboards={data.dashboards} />} />
+            
+                    }}
+                </Query>
+        )
+    }
+} 
 
 class Dashboards extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            widgets: []
-        }
-    }
-
-    componentDidMount() {
-        this.props.setTitle('Dashboards');
-    }
-
-    widgetsList() {
-        if (this.props.getDashboardsQuery.loading) {
-            return <div>
-                Loading...
-            </div>
-        } else {
-            if (this.props.getDashboardsQuery.dashboards.length > 0) {
-                return this.props.getDashboardsQuery.dashboards[0].widgets.map((widget, index) =>
-                    <CardWidget key={index} size={{ height: 'auto', width: '400px' }} title={widget.name} body={widget.description} head={widget.name} subtitle={widget.description} />
-                )
-            } else {
-                return <div>No Dashboards data</div>
-            }
-        }
-    }
-
     render() {
         return (
-            <div style={{ height: 'calc(100vh - 65px)', alignContent: 'baseline', justifyContent: 'flex-start', overflow: 'auto', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                {
-                    this.widgetsList()
-                }
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <DashboardsList />
+                <div style={{ height: 'calc(100vh - 65px)', alignContent: 'baseline', justifyContent: 'flex-start', overflow: 'auto', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                <Widgets id={this.props.dashboardId} />
+                </div>
+
             </div>
+
         )
     }
 }

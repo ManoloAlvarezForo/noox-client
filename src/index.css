@@ -48,22 +48,66 @@ body {
   background: -webkit-linear-gradient(to right, #4389A2, #5C258D);
   background: linear-gradient(to right, #4389A2, #5C258D); */
   /* background-image: linear-gradient(to top, #081426, #141d2e, #1f2735, #2b313d, #363b45); */
-  background: #ec008c;
+  /* background: #ec008c; */
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fc6767, #ec008c);
+  /* background: -webkit-linear-gradient(to right, #fc6767, #ec008c); */
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fc6767, #ec008c);
+  /* background: linear-gradient(to right, #fc6767, #ec008c); */
+  background-color: rgba(0, 0, 0, 0.42) !important;
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .login-main-background {
   /* background: linear-gradient(to right, #082a4e, #1f779e); */
-  background: linear-gradient(to left, #536976, #292e49);
+  /* background: linear-gradient(to left, #536976, #292e49); */
+  /* background: linear-gradient(to left, #027ac1, #292e49); */
+  /* background: linear-gradient(to left, #292e49, #027ac1); */
+  /* background: linear-gradient(to left, #64478a, #0467a2); */
+  /* background: linear-gradient(to left, #5716ad, #0777b9); */
+  
+  /* background-color: #384357; */
+  background: linear-gradient(to left, #5716ad, #0777b9);
+
   /* background: #5C258D;
   background: -webkit-linear-gradient(to right, #4389A2, #5C258D); 
   background: linear-gradient(to right, #4389A2, #5C258D); */
 }
 
+.mini-drawer-background {
+  /* background: none; */
+  background: linear-gradient(to left, #5716ad, #0777b9);
+}
+
+.mini-drawer-background-right {
+  /* background: none; */
+  background-color: #384357;
+  /* background-color: #0777b9; */
+
+
+}
+
 .hide {
   display: hidden;
+}
+
+.section.open .articlewrap {
+  max-height: 800px;
+  transition: max-height .5s ease-in;
+}
+
+.articlewrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .2s ease-out;
+}
+
+.sidenav-title {
+  max-height: 100px;
+  transition: max-width .5s ease-in;
+}
+
+.sidenav-title.close {
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width .2s ease-out;
 }

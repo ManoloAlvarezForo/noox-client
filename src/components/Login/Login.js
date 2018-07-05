@@ -66,44 +66,44 @@ class Login extends Component {
         <div style={{ flexDirection: 'column', background: 'none', width: '50%', justifyContent: 'start', display: 'flex' }}>
           <Paper style={{ borderRadius: '50%', background: 'none', alignSelf: 'flex-end', marginTop: '30px' }} elevation={24}>
             <div style={{
-              flexDirection: 'column', textAlign: 'center', width: '150px', height: '150px', borderStyle: 'dotted', borderRadius: '50%', alignSelf: 'center',
+              flexDirection: 'column', textAlign: 'center', width: '150px', height: '150px', borderStyle: 'dashed', borderRadius: '50%', alignSelf: 'center',
               justifyContent: 'center',
               display: 'flex',
               fontSize: '1rem',
               fontWeight: 'bold',
               fontFamily: 'monospace',
-              color: '#fc6767'
+              color: '#acacad'
             }}>
               <Icon style={{ fontSize: '80px', alignSelf: 'center', color: '#fc6767' }}>business</Icon>
             </div>
           </Paper>
           <Paper style={{ borderRadius: '50%', background: 'none', alignSelf: 'center' }} elevation={24}>
             <div style={{
-              flexDirection: 'column', textAlign: 'center', width: '120px', height: '120px', borderStyle: 'dotted', borderRadius: '50%', alignSelf: 'center',
+              flexDirection: 'column', textAlign: 'center', width: '120px', height: '120px', borderStyle: 'dashed', borderRadius: '50%', alignSelf: 'center',
               justifyContent: 'center',
               display: 'flex',
               fontSize: '4rem',
               fontWeight: 'bold',
               fontFamily: 'monospace',
-              color: '#fc6767'
+              color: '#acacad'
             }}>
               <Icon style={{ fontSize: '60px', alignSelf: 'center', color: '#fc6767' }}>widgets</Icon>
             </div>
           </Paper>
           <Paper style={{ borderRadius: '50%', background: 'none', alignSelf: 'flex-end' }} elevation={24}>
             <div style={{
-              flexDirection: 'row', textAlign: 'center', width: '300px', height: '300px', borderStyle: 'dotted', borderRadius: '50%', alignSelf: 'center',
+              flexDirection: 'row', textAlign: 'center', width: '300px', height: '300px', borderStyle: 'dashed', borderRadius: '50%', alignSelf: 'center',
               justifyContent: 'center',
               display: 'flex',
               fontSize: '8rem',
               fontWeight: 'bold',
               fontFamily: 'monospace',
-              color: '#fc6767'
+              color: '#acacad'
             }}>
-              <div style={{ display: 'flex', alignSelf: 'center' }}>N</div>
+              <div style={{color: '#fc6767', display: 'flex', alignSelf: 'center' }}>N</div>
               <Icon style={{ fontSize: '80px', alignSelf: 'center', color: '#fc6767' }}>hdr_weak</Icon>
 
-              <div style={{ display: 'flex', alignSelf: 'center' }}>X</div>
+              <div style={{color: '#fc6767', display: 'flex', alignSelf: 'center' }}>X</div>
             </div>
           </Paper>
         </div>
@@ -111,7 +111,7 @@ class Login extends Component {
           <Paper className="login-background " style={{ alignSelf: 'center', height: '350px', width: '200px', color: 'white', minWidth: '300px', padding: '80px', borderRadius: '10px' }} elevation={24}>
             <div>
               <form className={classes.container + " zoomIn"} noValidate autoComplete="off">
-                <h2 style={{ alignSelf: 'center' }} className={this.state.loginAnimation}>{this.state.login ? "Login" : "Sign Up"}</h2>
+                <div style={{ padding: '10px', alignSelf: 'center', fontSize: '1rem', fontWeight: 'bold' }} className={this.state.loginAnimation}>{this.state.login ? "Please continue with the authentication..." : "Create your account"}</div>
                 {!this.state.login && (
                   <TextField style={{ width: '100%' }}
                     id="name"
@@ -181,10 +181,10 @@ class Login extends Component {
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <br style={{ flex: 1 }} />
                 <Button style={{ color: 'white', borderColor: 'white' }} variant="outlined" size="medium" onClick={() => this._confirm()}>
-                  {this.state.login ? "login" : "create account"}
+                  {this.state.login ? "login" : "create"}
                 </Button>
                 <br style={{ flex: 1 }} />
-                <Button style={{ color: '#343e55' }} onClick={() => this.setState({ login: !this.state.login })} size="small" className={classes.button}>
+                <Button style={{ color: 'rgb(187, 195, 214)' }} onClick={() => this.setState({ login: !this.state.login })} size="small" className={classes.button}>
                   {this.state.login
                     ? "need to create an account?"
                     : "already have an account?"}

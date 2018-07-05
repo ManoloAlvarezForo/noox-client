@@ -11,18 +11,10 @@ const styles = {
     card: {
         margin: '5px',
     },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
     title: {
         marginBottom: 16,
         fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
+    }
 };
 
 class WidgetCard extends React.Component {
