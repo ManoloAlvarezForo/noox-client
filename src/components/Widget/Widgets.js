@@ -7,6 +7,7 @@ const WidgetList = ({ id }) => (
     <Query skip={id === 'none'} query={GET_WIDGETS} variables={{ id }}>
         {({ loading, error, data }) => {
             if (loading) return <div>Loading...</div>
+            if (id === 'no-data') return <div>No data...</div>
             if(error) return `Error!: ${error}` 
 
             return data.widgets.map((widget, index) =>

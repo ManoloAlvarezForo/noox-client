@@ -1,10 +1,10 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom';
 import DevicesPage from '../containers/Devices/DevicesPage';
-import LoginPage from '../containers/Login/LoginPage'
-import DashboardsPage from '../containers/Dashboards/DashboardsPage'
-import {SecretRoute} from '../routes/SecretRoute'
-import Error404 from '../components/Error404/Error404'
+import LoginPage from '../containers/Login/LoginPage';
+import DashboardsPage from '../containers/Dashboards/DashboardsPage';
+import {SecretRoute} from '../routes/SecretRoute';
+import Error404 from '../components/Error404/Error404';
 
 const Routes = () => {
     return (

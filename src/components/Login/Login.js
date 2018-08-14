@@ -109,7 +109,7 @@ class Login extends Component {
           </Paper>
         </div>
         <div style={{ flex: '1', justifyContent: 'center', display: 'flex', flexDirection: 'row' }}>
-          <Paper className="login-background " style={{ border: '2px dashed', alignSelf: 'center', height: '350px', width: '200px', color: 'white', minWidth: '300px', padding: '80px', borderRadius: '10px 110px 10px 110px', border: '2px dashed', borderColor: '#0c75b9' }} elevation={24}>
+          <Paper className="login-background " style={{ alignSelf: 'center', height: '350px', width: '200px', color: 'white', minWidth: '300px', padding: '80px', borderRadius: '10px 110px 10px 110px', border: '2px dashed', borderColor: '#0c75b9' }} elevation={24}>
             <div>
               <form className={classes.container + " zoomIn"} noValidate autoComplete="off">
                 <div style={{color: 'rgb(187, 195, 214)', padding: '10px', alignSelf: 'center', fontSize: '1rem', fontWeight: 'bold' }} className={this.state.loginAnimation}>{this.state.login ? "Please continue with the authentication..." : "Create your account"}</div>
