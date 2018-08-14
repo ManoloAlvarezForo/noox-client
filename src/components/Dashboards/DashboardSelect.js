@@ -17,15 +17,15 @@ const styles = {
     }
 }
 
-class DashboardSelect extends React.Component {
+export class DashboardSelect extends React.Component {
     state = {
-        dashboard: this.props.dashboards[0].name,
+        dashboard: this.props.dashboards.length === 0 ? 'None' : this.props.dashboards[0].name,
         selectedIndex: 0,
         anchorEl: null
     };
 
     componentDidMount() {
-        this.props.dashboardSelected(this.props.dashboards[0].id)
+        this.props.dashboards.length === 0 ? this.props.dashboardSelected('no-data') : this.props.dashboardSelected(this.props.dashboards[0].id)
     }
     
     handleClickListItem = event => {
@@ -53,7 +53,7 @@ class DashboardSelect extends React.Component {
                     onClick={this.handleClickListItem}
                 >
                     <ListItemText disableTypography style={{ color: 'white' }}
-                        primary={this.props.dashboards[this.state.selectedIndex].name}
+                        primary={ this.props.dashboards.length === 0 ? 'none' : this.props.dashboards[this.state.selectedIndex].name}
                     />
                     <ListItemIcon>
                         <MoreVertIcon style={{ color: 'white', margin: '0px' }} />

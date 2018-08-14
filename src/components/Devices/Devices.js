@@ -7,13 +7,12 @@ class Devices extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <div className="basic-column-content">
-                <Toolbar title="Devices" backgroundColor="mini-drawer-background"/>
+                <Toolbar title="Devices" backgroundColor="mini-drawer-background" />
                 <div className="basic-content">
-                Devices
+                    Devices
                 </div>
-                
             </div>
         )
     }
