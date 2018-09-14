@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { AUTH_TOKEN, LOGIN_URL, METHOD_POST, SIGNUP_URL } from "../../constants";
-import { FetcherPost } from '../../utils/Fetcher'
+import { FetcherPost } from '../../Utils/Fetcher'
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
